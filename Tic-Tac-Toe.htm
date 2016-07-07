@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>Tic-Tac-Toe</title>
+<script language="JavaScript" type="text/javascript">
+
+var table = document.getElementsByTagName("td");
+function fixTable() {
+ for (var i=0; i < table.length; i++) {
+ table[i].style.textAlign           =    "center";
+ table[i].style.fontSize            =      "60px";
+ table[i].style.fontFamily          =    "Tahoma";
+ table[i].style.cursor              =   "pointer";
+ table[i].style.backgroundColor     =   "#CCFFFF";
+ }
+}
+function check() {
+ <!-- p1 -->
+ if (table[0].innerHTML == "X" && table[1].innerHTML == "X" && table[2].innerHTML == "X") {alert("Player one wins!");clearRows();}
+ if (table[3].innerHTML == "X" && table[4].innerHTML == "X" && table[5].innerHTML == "X") {alert("Player one wins!");clearRows();}
+ if (table[6].innerHTML == "X" && table[7].innerHTML == "X" && table[8].innerHTML == "X") {alert("Player one wins!");clearRows();}
+ if (table[0].innerHTML == "X" && table[3].innerHTML == "X" && table[6].innerHTML == "X") {alert("Player one wins!");clearRows();}
+ if (table[1].innerHTML == "X" && table[4].innerHTML == "X" && table[7].innerHTML == "X") {alert("Player one wins!");clearRows();}
+ if (table[2].innerHTML == "X" && table[5].innerHTML == "X" && table[8].innerHTML == "X") {alert("Player one wins!");clearRows();}
+ if (table[0].innerHTML == "X" && table[4].innerHTML == "X" && table[8].innerHTML == "X") {alert("Player one wins!");clearRows();}
+ if (table[2].innerHTML == "X" && table[4].innerHTML == "X" && table[6].innerHTML == "X") {alert("Player one wins!");clearRows();}
+ <!-- p2 -->
+ if (table[0].innerHTML == "O" && table[1].innerHTML == "O" && table[2].innerHTML == "O") {alert("Player two wins!");clearRows();}
+ if (table[3].innerHTML == "O" && table[4].innerHTML == "O" && table[5].innerHTML == "O") {alert("Player two wins!");clearRows();}
+ if (table[6].innerHTML == "O" && table[7].innerHTML == "O" && table[8].innerHTML == "O") {alert("Player two wins!");clearRows();}
+ if (table[0].innerHTML == "O" && table[3].innerHTML == "O" && table[6].innerHTML == "O") {alert("Player two wins!");clearRows();}
+ if (table[1].innerHTML == "O" && table[4].innerHTML == "O" && table[7].innerHTML == "O") {alert("Player two wins!");clearRows();}
+ if (table[2].innerHTML == "O" && table[5].innerHTML == "O" && table[8].innerHTML == "O") {alert("Player two wins!");clearRows();}
+ if (table[0].innerHTML == "O" && table[4].innerHTML == "O" && table[8].innerHTML == "O") {alert("Player two wins!");clearRows();}
+ if (table[2].innerHTML == "O" && table[4].innerHTML == "O" && table[6].innerHTML == "O") {alert("Player two wins!");clearRows();}
+ 
+}
+function clearRows() {
+ for (var i=0; i < table.length; i++) {
+ table[i].innerHTML = "&nbsp;";
+ }
+}
+function replaceName() {
+var div = document.getElementById("pl");
+ 
+   if (document.forms[0].val.value == "player1") {
+   div.innerHTML = "Player 1 Play!"
+   }
+   if (document.forms[0].val.value == "player2") {
+   div.innerHTML = "Player 2 Play!"
+   }
+ 
+}
+function randomst() {
+ var x = Math.floor(Math.random() * 5);
+if (x == 0 || x == 1 || x == 2) {
+document.forms[0].val.value = "player1"
+}
+else if (x == 3 || x == 4 || x == 5) {
+document.forms[0].val.value = "player2"
+}
+else {
+document.forms[0].val.value = "player2"
+}
+ 
+}
+//-->
+</script>
+</head>
+<body onLoad="fixTable();randomst();replaceName()" style="color:#000000;">
+<!--Table-->
+<form action="#" method="get">
+<input type="hidden" value="player1" name="val">
+</form>
+<div style="font-family:Arial;text-align:center;font-size:50px">Tic-Tac-Toe<br><small>Made by Subas Panta</small></div>
+<table align="center" cellpadding="3" cellspacing="2" border="0">
+<tr>
+        <td onClick="if(document.forms[0].val.value == 'player1' && this.innerHTML != 'X' && this.innerHTML != 'O'){this.innerHTML = 'X';document.forms[0].val.value = 'player2'} else if(document.forms[0].val.value == 'player2' && this.innerHTML != 'X' && this.innerHTML != 'O'){this.innerHTML = 'O';document.forms[0].val.value = 'player1'} check();replaceName()" width="132" height="132">&nbsp;</td>
+        <td onClick="if(document.forms[0].val.value == 'player1' && this.innerHTML != 'X' && this.innerHTML != 'O'){this.innerHTML = 'X';document.forms[0].val.value = 'player2'} else if(document.forms[0].val.value == 'player2' && this.innerHTML != 'X' && this.innerHTML != 'O'){this.innerHTML = 'O';document.forms[0].val.value = 'player1'} check();replaceName()" width="132" height="132">&nbsp;</td>
+        <td onClick="if(document.forms[0].val.value == 'player1' && this.innerHTML != 'X' && this.innerHTML != 'O'){this.innerHTML = 'X';document.forms[0].val.value = 'player2'} else if(document.forms[0].val.value == 'player2' && this.innerHTML != 'X' && this.innerHTML != 'O'){this.innerHTML = 'O';document.forms[0].val.value = 'player1'} check();replaceName()" width="132" height="132">&nbsp;</td>
+</tr>
+<tr>
+        <td onClick="if(document.forms[0].val.value == 'player1' && this.innerHTML != 'X' && this.innerHTML != 'O'){this.innerHTML = 'X';document.forms[0].val.value = 'player2'} else if(document.forms[0].val.value == 'player2' && this.innerHTML != 'X' && this.innerHTML != 'O'){this.innerHTML = 'O';document.forms[0].val.value = 'player1'} check();replaceName()" width="132" height="132">&nbsp;</td>
+        <td onClick="if(document.forms[0].val.value == 'player1' && this.innerHTML != 'X' && this.innerHTML != 'O'){this.innerHTML = 'X';document.forms[0].val.value = 'player2'} else if(document.forms[0].val.value == 'player2' && this.innerHTML != 'X' && this.innerHTML != 'O'){this.innerHTML = 'O';document.forms[0].val.value = 'player1'} check();replaceName()" width="132" height="132">&nbsp;</td>
+        <td onClick="if(document.forms[0].val.value == 'player1' && this.innerHTML != 'X' && this.innerHTML != 'O'){this.innerHTML = 'X';document.forms[0].val.value = 'player2'} else if(document.forms[0].val.value == 'player2' && this.innerHTML != 'X' && this.innerHTML != 'O'){this.innerHTML = 'O';document.forms[0].val.value = 'player1'} check();replaceName()" width="132" height="132">&nbsp;</td>
+</tr>
+<tr>
+        <td onClick="if(document.forms[0].val.value == 'player1' && this.innerHTML != 'X' && this.innerHTML != 'O'){this.innerHTML = 'X';document.forms[0].val.value = 'player2'} else if(document.forms[0].val.value == 'player2' && this.innerHTML != 'X' && this.innerHTML != 'O'){this.innerHTML = 'O';document.forms[0].val.value = 'player1'} check();replaceName()" width="132" height="132">&nbsp;</td>
+        <td onClick="if(document.forms[0].val.value == 'player1' && this.innerHTML != 'X' && this.innerHTML != 'O'){this.innerHTML = 'X';document.forms[0].val.value = 'player2'} else if(document.forms[0].val.value == 'player2' && this.innerHTML != 'X' && this.innerHTML != 'O'){this.innerHTML = 'O';document.forms[0].val.value = 'player1'} check();replaceName()" width="132" height="132">&nbsp;</td>
+        <td onClick="if(document.forms[0].val.value == 'player1' && this.innerHTML != 'X' && this.innerHTML != 'O'){this.innerHTML = 'X';document.forms[0].val.value = 'player2'} else if(document.forms[0].val.value == 'player2' && this.innerHTML != 'X' && this.innerHTML != 'O'){this.innerHTML = 'O';document.forms[0].val.value = 'player1'} check();replaceName()" width="132" height="132">&nbsp;</td>
+</tr>
+</table>
+<div id="pl" style="font-family:Arial;text-align:center;font-size:30px">&nbsp;</div>
+<div id="pl" style="font-family:Arial;text-align:center;font-size:20px"><a href="javascript:;" onClick="location.reload()" style="color:#0000FF">Press F5 to begin again</a></div>
+</body>
+</html>
